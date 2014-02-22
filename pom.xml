@@ -48,14 +48,28 @@
 
             <launcher>
               <id>android-client</id>
-              <mainClass>com.wordnik.swagger.codegen.BasicAndroidJavaClient</mainClass>
+              <mainClass>AndroidClient</mainClass>
               <args>
-                  <arg>http://192.168.1.23/rest/api_docs</arg>
+                <arg>https://next.cloud.dreamfactory.com/rest/api_docs</arg>
                 <arg></arg>
                 <arg></arg>
               </args>
               <jvmArgs>
-                <jvmArg>-Dheader=X-DreamFactory-Application-Name:launchpad</jvmArg>
+                <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
+                <jvmArg>-DskipErrors=true</jvmArg>
+              </jvmArgs>
+            </launcher>
+
+            <launcher>
+              <id>cs-client</id>
+              <mainClass>CSharpClient</mainClass>
+              <args>
+                <arg>https://next.cloud.dreamfactory.com/rest/api_docs</arg>
+                <arg></arg>
+                <arg></arg>
+              </args>
+              <jvmArgs>
+                <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
                 <jvmArg>-DskipErrors=true</jvmArg>
               </jvmArgs>
             </launcher>
@@ -73,7 +87,6 @@
                 <jvmArg>-DskipErrors=true</jvmArg>
               </jvmArgs>
             </launcher>
-
           </launchers>
         </configuration>
       </plugin>
