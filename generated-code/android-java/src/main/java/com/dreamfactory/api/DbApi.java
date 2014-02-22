@@ -1,14 +1,14 @@
 package com.dreamfactory.api;
 
-import com.dreamfactory.client.ApiException;
-import com.dreamfactory.client.ApiInvoker;
+import com.wordnik.client.common.ApiException;
+import com.wordnik.client.common.ApiInvoker;
 import com.dreamfactory.model.Records;
 import com.dreamfactory.model.Record;
 import com.dreamfactory.model.Tables;
 import java.util.*;
 
 public class DbApi {
-  String basePath = "http://192.168.1.23/rest";
+  String basePath = "https://next.cloud.dreamfactory.com/rest";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public void addHeader(String key, String value) {

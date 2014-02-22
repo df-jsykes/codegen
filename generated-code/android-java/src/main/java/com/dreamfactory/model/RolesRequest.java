@@ -3,18 +3,18 @@ package com.dreamfactory.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.*;
-import com.dreamfactory.model.RoleRequest;
+import com.dreamfactory.model.Role;
 public class RolesRequest {
   /* Array of system role records. */
   @JsonProperty("record")
-  private List<RoleRequest> record = new ArrayList<RoleRequest>();
+  private List<Role> record = new ArrayList<Role>();
   /* Array of system record identifiers, used for batch GET, PUT, PATCH, and DELETE. */
   @JsonProperty("ids")
   private List<Integer> ids = new ArrayList<Integer>();
-  public List<RoleRequest> getRecord() {
+  public List<Role> getRecord() {
     return record;
   }
-  public void setRecord(List<RoleRequest> record) {
+  public void setRecord(List<Role> record) {
     this.record = record;
   }
 

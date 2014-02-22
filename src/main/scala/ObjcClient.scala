@@ -4,7 +4,7 @@ object ObjcClient extends BasicObjcGenerator {
   def main(args: Array[String]) = generateClient(args)
 
   // where to write generated code
-  override def destinationDir = "samples/client/objc/client"
+  override def destinationDir = "generated-code/objc"
 
   // to avoid recompiling ...
   override def templateDir = "src/main/resources/objc"

@@ -3,19 +3,19 @@ package com.dreamfactory.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.*;
+import com.dreamfactory.model.Role;
 import com.dreamfactory.model.Metadata;
-import com.dreamfactory.model.RoleRequest;
 public class RolesResponse {
   /* Array of system role records. */
   @JsonProperty("record")
-  private List<RoleRequest> record = new ArrayList<RoleRequest>();
+  private List<Role> record = new ArrayList<Role>();
   /* Array of metadata returned for GET requests. */
   @JsonProperty("meta")
   private Metadata meta = null;
-  public List<RoleRequest> getRecord() {
+  public List<Role> getRecord() {
     return record;
   }
-  public void setRecord(List<RoleRequest> record) {
+  public void setRecord(List<Role> record) {
     this.record = record;
   }
 
