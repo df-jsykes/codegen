@@ -1,7 +1,7 @@
 package com.dreamfactory.api;
 
-import com.wordnik.client.common.ApiException;
-import com.wordnik.client.common.ApiInvoker;
+import com.dreamfactory.client.ApiException;
+import com.dreamfactory.client.ApiInvoker;
 import java.io.File;
 import com.dreamfactory.model.FileResponse;
 import com.dreamfactory.model.Container;
