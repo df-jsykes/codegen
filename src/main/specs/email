@@ -1,0 +1,192 @@
+{
+  "swaggerVersion": "1.2",
+  "apiVersion": "1.0",
+  "basePath": "https://next.cloud.dreamfactory.com/rest",
+  "resourcePath": "/email",
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "consumes": [
+    "application/json",
+    "application/xml"
+  ],
+  "apis": [
+    {
+      "path": "/email",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "sendEmail() - Send an email created from posted data and/or a template.",
+          "nickname": "sendEmail",
+          "type": "EmailResponse",
+          "parameters": [
+            {
+              "name": "template",
+              "description": "Optional template name to base email on.",
+              "allowMultiple": false,
+              "type": "string",
+              "paramType": "query",
+              "required": false
+            },
+            {
+              "name": "template_id",
+              "description": "Optional template id to base email on.",
+              "allowMultiple": false,
+              "type": "integer",
+              "format": "int32",
+              "paramType": "query",
+              "required": false
+            },
+            {
+              "name": "data",
+              "description": "Data containing name-value pairs used for provisioning emails.",
+              "allowMultiple": false,
+              "type": "EmailRequest",
+              "paramType": "body",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "message": "Bad Request - Request is not complete or valid.",
+              "code": 400
+            },
+            {
+              "message": "Unauthorized Access - No currently valid session available.",
+              "code": 401
+            },
+            {
+              "message": "Not Found - Email template or system resource not found.",
+              "code": 404
+            },
+            {
+              "message": "System Error - Specific reason is included in the error message.",
+              "code": 500
+            }
+          ],
+          "notes": "If a template is not used with all required fields, then they must be included in the request. If the 'from' address is not provisioned in the service, then it must be included in the request."
+        }
+      ],
+      "description": "Operations on a email service."
+    }
+  ],
+  "models": {
+    "Resources": {
+      "id": "Resources",
+      "properties": {
+        "resource": {
+          "type": "Array",
+          "description": "Array of resources available by this service.",
+          "items": {
+            "$ref": "Resource"
+          }
+        }
+      }
+    },
+    "Resource": {
+      "id": "Resource",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the resource."
+        }
+      }
+    },
+    "Success": {
+      "id": "Success",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "description": "True when API call was successful, false or error otherwise."
+        }
+      }
+    },
+    "EmailResponse": {
+      "id": "EmailResponse",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Number of emails successfully sent."
+        }
+      }
+    },
+    "EmailRequest": {
+      "id": "EmailRequest",
+      "properties": {
+        "template": {
+          "type": "string",
+          "description": "Email Template name to base email on."
+        },
+        "template_id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Email Template id to base email on."
+        },
+        "to": {
+          "type": "Array",
+          "description": "Required single or multiple receiver addresses.",
+          "items": {
+            "$ref": "EmailAddress"
+          }
+        },
+        "cc": {
+          "type": "Array",
+          "description": "Optional CC receiver addresses.",
+          "items": {
+            "$ref": "EmailAddress"
+          }
+        },
+        "bcc": {
+          "type": "Array",
+          "description": "Optional BCC receiver addresses.",
+          "items": {
+            "$ref": "EmailAddress"
+          }
+        },
+        "subject": {
+          "type": "string",
+          "description": "Text only subject line."
+        },
+        "body_text": {
+          "type": "string",
+          "description": "Text only version of the body."
+        },
+        "body_html": {
+          "type": "string",
+          "description": "Escaped HTML version of the body."
+        },
+        "from_name": {
+          "type": "string",
+          "description": "Required sender name."
+        },
+        "from_email": {
+          "type": "string",
+          "description": "Required sender email."
+        },
+        "reply_to_name": {
+          "type": "string",
+          "description": "Optional reply to name."
+        },
+        "reply_to_email": {
+          "type": "string",
+          "description": "Optional reply to email."
+        }
+      }
+    },
+    "EmailAddress": {
+      "id": "EmailAddress",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Optional name displayed along with the email address."
+        },
+        "email": {
+          "type": "string",
+          "description": "Required email address."
+        }
+      }
+    }
+  }
+}

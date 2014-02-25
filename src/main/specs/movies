@@ -1,0 +1,76 @@
+{
+  "swaggerVersion": "1.2",
+  "apiVersion": "1.0",
+  "basePath": "https://next.cloud.dreamfactory.com/rest",
+  "resourcePath": "/movies",
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "apis": [
+    {
+      "path": "/movies",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get a recordset of movies based on a query parameter",
+          "nickname": "getMovies",
+          "type": "Movies",
+          "parameters": [
+            {
+              "name": "q",
+              "description": "Movie name as a string",
+              "allowMultiple": false,
+              "type": "string",
+              "paramType": "query",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "message": "Bad Request - Request does not have a valid format, all required parameters, etc.",
+              "code": 400
+            },
+            {
+              "message": "System Error - Specific reason is included in the error message.",
+              "code": 500
+            }
+          ],
+          "notes": "Use a plus sign between words in titles with multiple words"
+        }
+      ],
+      "description": "Operations for resource type administration."
+    }
+  ],
+  "models": {
+    "Movies": {
+      "id": "Movies",
+      "properties": {
+        "resource": {
+          "type": "Array",
+          "items": {
+            "$ref": "Movie"
+          }
+        }
+      }
+    },
+    "Movie": {
+      "id": "Movie",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Success": {
+      "id": "Success",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
