@@ -14,6 +14,9 @@ class AndroidClient extends BasicJavaGenerator {
   // templates
   override def templateDir = "android-java"
 
+  // package for api invoker, error files
+  override def invokerPackage = Some("com.dreamfactory.client")
+
   // package for models
   override def modelPackage = Some("com.dreamfactory.model")
 
@@ -29,7 +32,7 @@ class AndroidClient extends BasicJavaGenerator {
   override def supportingFiles = List(
     ("apiInvoker.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "ApiInvoker.java"),
     ("jsonUtil.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "JsonUtil.java"),
-    ("ApiException.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "ApiException.java"),
+    ("apiException.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "ApiException.java"),
     ("pom.mustache", outputDir, "pom.xml")
   )
 }

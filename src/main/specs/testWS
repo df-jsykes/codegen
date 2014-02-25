@@ -1,0 +1,53 @@
+{
+  "swaggerVersion": "1.2",
+  "apiVersion": "1.0",
+  "basePath": "https://next.cloud.dreamfactory.com/rest",
+  "resourcePath": "/testWS",
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "consumes": [
+    "application/json",
+    "application/xml"
+  ],
+  "apis": [
+    {
+      "path": "/testWS",
+      "operations": [],
+      "description": "No operations currently defined for this service."
+    }
+  ],
+  "models": {
+    "Resources": {
+      "id": "Resources",
+      "properties": {
+        "resource": {
+          "type": "Array",
+          "description": "Array of resources available by this service.",
+          "items": {
+            "$ref": "Resource"
+          }
+        }
+      }
+    },
+    "Resource": {
+      "id": "Resource",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the resource."
+        }
+      }
+    },
+    "Success": {
+      "id": "Success",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "description": "True when API call was successful, false or error otherwise."
+        }
+      }
+    }
+  }
+}

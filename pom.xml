@@ -47,6 +47,20 @@
             </launcher>
 
             <launcher>
+              <id>android-client-from-files</id>
+              <mainClass>AndroidClient</mainClass>
+              <args>
+                <arg>https://next.cloud.dreamfactory.com/rest/api_docs</arg>
+                <arg></arg>
+                <arg></arg>
+              </args>
+              <jvmArgs>
+                <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
+                <jvmArg>-DfileMap=src/main/specs/api_docs</jvmArg>
+              </jvmArgs>
+            </launcher>
+
+            <launcher>
               <id>android-client</id>
               <mainClass>AndroidClient</mainClass>
               <args>
@@ -56,7 +70,6 @@
               </args>
               <jvmArgs>
                 <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
-                <jvmArg>-DskipErrors=true</jvmArg>
               </jvmArgs>
             </launcher>
 

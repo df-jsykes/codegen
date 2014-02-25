@@ -1,7 +1,7 @@
 package com.dreamfactory.api;
 
-import com.wordnik.client.common.ApiException;
-import com.wordnik.client.common.ApiInvoker;
+import com.dreamfactory.client.ApiException;
+import com.dreamfactory.client.ApiInvoker;
 import com.dreamfactory.model.EmailRequest;
 import com.dreamfactory.model.EmailResponse;
 import java.util.*;
