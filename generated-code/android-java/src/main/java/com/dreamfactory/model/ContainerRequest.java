@@ -2,7 +2,6 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
 import com.dreamfactory.model.FolderRequest;
 import com.dreamfactory.model.FileRequest;
 public class ContainerRequest {

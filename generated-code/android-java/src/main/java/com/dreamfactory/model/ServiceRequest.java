@@ -2,9 +2,8 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
-import com.dreamfactory.model.Role;
-import com.dreamfactory.model.App;
+import com.dreamfactory.model.RelatedApps;
+import com.dreamfactory.model.RelatedRoles;
 public class ServiceRequest {
   /* Identifier of this service. */
   @JsonProperty("id")
@@ -53,10 +52,10 @@ public class ServiceRequest {
   private String headers = null;
   /* Related apps by app to service assignment. */
   @JsonProperty("apps")
-  private List<App> apps = new ArrayList<App>();
+  private RelatedApps apps = null;
   /* Related roles by service to role assignment. */
   @JsonProperty("roles")
-  private List<Role> roles = new ArrayList<Role>();
+  private RelatedRoles roles = null;
   public Integer getId() {
     return id;
   }
@@ -162,17 +161,17 @@ public class ServiceRequest {
     this.headers = headers;
   }
 
-  public List<App> getApps() {
+  public RelatedApps getApps() {
     return apps;
   }
-  public void setApps(List<App> apps) {
+  public void setApps(RelatedApps apps) {
     this.apps = apps;
   }
 
-  public List<Role> getRoles() {
+  public RelatedRoles getRoles() {
     return roles;
   }
-  public void setRoles(List<Role> roles) {
+  public void setRoles(RelatedRoles roles) {
     this.roles = roles;
   }
 

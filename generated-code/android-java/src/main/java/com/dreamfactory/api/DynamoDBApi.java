@@ -2,7 +2,7 @@ package com.dreamfactory.api;
 
 import com.dreamfactory.client.ApiException;
 import com.dreamfactory.client.ApiInvoker;
-import com.dreamfactory.model.Records;
+import com.dreamfactory.Records;
 import com.dreamfactory.model.Record;
 import com.dreamfactory.model.Tables;
 import java.util.*;

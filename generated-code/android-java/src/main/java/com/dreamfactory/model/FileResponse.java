@@ -2,7 +2,6 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
 public class FileResponse {
   /* Identifier/Name for the file, localized to requested resource. */
   @JsonProperty("name")

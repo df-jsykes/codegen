@@ -2,7 +2,6 @@ package com.dreamfactory.api;
 
 import com.dreamfactory.client.ApiException;
 import com.dreamfactory.client.ApiInvoker;
-import java.io.File;
 import com.dreamfactory.model.FileResponse;
 import com.dreamfactory.model.Container;
 import com.dreamfactory.model.FolderRequest;
@@ -12,6 +11,7 @@ import com.dreamfactory.model.ContainersResponse;
 import com.dreamfactory.model.FileRequest;
 import com.dreamfactory.model.ContainersRequest;
 import com.dreamfactory.model.FolderResponse;
+import com.dreamfactory.model.File;
 import com.dreamfactory.model.ContainerResponse;
 import java.util.*;
 

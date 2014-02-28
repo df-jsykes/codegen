@@ -2,8 +2,8 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import com.dreamfactory.model.Role;
-import com.dreamfactory.model.App;
+import com.dreamfactory.model.RelatedApp;
+import com.dreamfactory.model.RelatedRole;
 public class UserRequest {
   /* Identifier of this user. */
   @JsonProperty("id")
@@ -40,10 +40,10 @@ public class UserRequest {
   private String role_id = null;
   /* Related app by default_app_id. */
   @JsonProperty("default_app")
-  private App default_app = null;
+  private RelatedApp default_app = null;
   /* Related role by role_id. */
   @JsonProperty("role")
-  private Role role = null;
+  private RelatedRole role = null;
   public Integer getId() {
     return id;
   }
@@ -121,17 +121,17 @@ public class UserRequest {
     this.role_id = role_id;
   }
 
-  public App getDefault_app() {
+  public RelatedApp getDefault_app() {
     return default_app;
   }
-  public void setDefault_app(App default_app) {
+  public void setDefault_app(RelatedApp default_app) {
     this.default_app = default_app;
   }
 
-  public Role getRole() {
+  public RelatedRole getRole() {
     return role;
   }
-  public void setRole(Role role) {
+  public void setRole(RelatedRole role) {
     this.role = role;
   }
 

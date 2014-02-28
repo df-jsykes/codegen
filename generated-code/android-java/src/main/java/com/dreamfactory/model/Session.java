@@ -2,8 +2,7 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
-import com.dreamfactory.model.App;
+import com.dreamfactory.model.SessionApp;
 public class Session {
   /* Identifier for the current user. */
   @JsonProperty("id")
@@ -29,18 +28,12 @@ public class Session {
   /* Date timestamp of the last login for the current user. */
   @JsonProperty("last_login_date")
   private String last_login_date = null;
-  /* Extra user data, potentially from remote login provider. */
-  @JsonProperty("user_data")
-  private String user_data = null;
-  /* Where the user login originated, 0 = local, otherwise remote login provider_id. */
-  @JsonProperty("user_source")
-  private Integer user_source = null;
   /* App groups and the containing apps. */
   @JsonProperty("app_groups")
-  private List<App> app_groups = new ArrayList<App>();
+  private List<SessionApp> app_groups = new ArrayList<SessionApp>();
   /* Apps that are not in any app groups. */
   @JsonProperty("no_group_apps")
-  private List<App> no_group_apps = new ArrayList<App>();
+  private List<SessionApp> no_group_apps = new ArrayList<SessionApp>();
   /* Id for the current session, used in X-DreamFactory-Session-Token header for API requests. */
   @JsonProperty("session_id")
   private String session_id = null;
@@ -106,31 +99,17 @@ public class Session {
     this.last_login_date = last_login_date;
   }
 
-  public String getUser_data() {
-    return user_data;
-  }
-  public void setUser_data(String user_data) {
-    this.user_data = user_data;
-  }
-
-  public Integer getUser_source() {
-    return user_source;
-  }
-  public void setUser_source(Integer user_source) {
-    this.user_source = user_source;
-  }
-
-  public List<App> getApp_groups() {
+  public List<SessionApp> getApp_groups() {
     return app_groups;
   }
-  public void setApp_groups(List<App> app_groups) {
+  public void setApp_groups(List<SessionApp> app_groups) {
     this.app_groups = app_groups;
   }
 
-  public List<App> getNo_group_apps() {
+  public List<SessionApp> getNo_group_apps() {
     return no_group_apps;
   }
-  public void setNo_group_apps(List<App> no_group_apps) {
+  public void setNo_group_apps(List<SessionApp> no_group_apps) {
     this.no_group_apps = no_group_apps;
   }
 
@@ -167,8 +146,6 @@ public class Session {
     sb.append("  is_sys_admin: ").append(is_sys_admin).append("\n");
     sb.append("  role: ").append(role).append("\n");
     sb.append("  last_login_date: ").append(last_login_date).append("\n");
-    sb.append("  user_data: ").append(user_data).append("\n");
-    sb.append("  user_source: ").append(user_source).append("\n");
     sb.append("  app_groups: ").append(app_groups).append("\n");
     sb.append("  no_group_apps: ").append(no_group_apps).append("\n");
     sb.append("  session_id: ").append(session_id).append("\n");

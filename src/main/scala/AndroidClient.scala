@@ -23,6 +23,13 @@ class AndroidClient extends BasicJavaGenerator {
   // package for api classes
   override def apiPackage = Some("com.dreamfactory.api")
 
+  // use our manually created file, defined in the supportingFiles
+  override def importMapping = Map(
+    "Records" -> "com.dreamfactory.Records")
+
+  // don't make a new records model
+  override def defaultIncludes = super.defaultIncludes ++ Set("Records")
+
   additionalParams ++= Map(
     "artifactId" -> "android-client", 
     "artifactVersion" -> "1.0.0",
@@ -30,6 +37,8 @@ class AndroidClient extends BasicJavaGenerator {
 
   // supporting classes
   override def supportingFiles = List(
+    // manually-created Records.java file
+    ("records.java", destinationDir + java.io.File.separator + "com.dreamfactory".replace(".", java.io.File.separator) + java.io.File.separator, "Records.java"),
     ("httpPatch.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "HttpPatch.java"),
     ("apiInvoker.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "ApiInvoker.java"),
     ("jsonUtil.mustache", destinationDir + java.io.File.separator + invokerPackage.get.replace(".", java.io.File.separator) + java.io.File.separator, "JsonUtil.java"),

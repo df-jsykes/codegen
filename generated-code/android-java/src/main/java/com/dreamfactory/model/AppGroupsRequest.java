@@ -2,13 +2,12 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
 import com.dreamfactory.model.AppGroupRequest;
 public class AppGroupsRequest {
   /* Array of system application group records. */
   @JsonProperty("record")
   private List<AppGroupRequest> record = new ArrayList<AppGroupRequest>();
-  /* Array of system record identifiers, used for batch GET, PUT, PATCH, and DELETE. */
+  /* Array of system application group record identifiers, used for batch GET, PUT, PATCH, and DELETE. */
   @JsonProperty("ids")
   private List<Integer> ids = new ArrayList<Integer>();
   public List<AppGroupRequest> getRecord() {
