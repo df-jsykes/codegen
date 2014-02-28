@@ -2,20 +2,19 @@ package com.dreamfactory.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.*;
 import com.dreamfactory.model.Metadata;
-import com.dreamfactory.model.Record;
-public class Records {
-  /* Array of records of the given resource. */
+import com.dreamfactory.model.EmailTemplateResponse;
+public class EmailTemplatesResponse {
+  /* Array of system email template records. */
   @JsonProperty("record")
-  private List<Record> record = new ArrayList<Record>();
-  /* Available metadata for the response. */
+  private List<EmailTemplateResponse> record = new ArrayList<EmailTemplateResponse>();
+  /* Array of metadata returned for GET requests. */
   @JsonProperty("meta")
   private Metadata meta = null;
-  public List<Record> getRecord() {
+  public List<EmailTemplateResponse> getRecord() {
     return record;
   }
-  public void setRecord(List<Record> record) {
+  public void setRecord(List<EmailTemplateResponse> record) {
     this.record = record;
   }
 
@@ -29,7 +28,7 @@ public class Records {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Records {\n");
+    sb.append("class EmailTemplatesResponse {\n");
     sb.append("  record: ").append(record).append("\n");
     sb.append("  meta: ").append(meta).append("\n");
     sb.append("}\n");
