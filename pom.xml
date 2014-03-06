@@ -41,8 +41,9 @@
                 <arg></arg>
               </args>
               <jvmArgs>
-                <jvmArg>-Dheader=X-DreamFactory-Application-Name:launchpad</jvmArg>
+                <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
                 <jvmArg>-DskipErrors=true</jvmArg>
+                <jvmArg>-Djsse.enableSNIExtension=false</jvmArg>
               </jvmArgs>
             </launcher>
 
@@ -57,6 +58,7 @@
               <jvmArgs>
                 <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
                 <jvmArg>-DfileMap=src/main/specs/api_docs</jvmArg>
+                <jvmArg>-Djsse.enableSNIExtension=false</jvmArg>
               </jvmArgs>
             </launcher>
 
@@ -70,6 +72,7 @@
               </args>
               <jvmArgs>
                 <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
+                <jvmArg>-Djsse.enableSNIExtension=false</jvmArg>
               </jvmArgs>
             </launcher>
 
@@ -84,6 +87,7 @@
               <jvmArgs>
                 <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
                 <jvmArg>-DskipErrors=true</jvmArg>
+                <jvmArg>-Djsse.enableSNIExtension=false</jvmArg>
               </jvmArgs>
             </launcher>
 
@@ -98,6 +102,7 @@
               <jvmArgs>
                 <jvmArg>-Dheader=X-DreamFactory-Application-Name:todoangular</jvmArg>
                 <jvmArg>-DskipErrors=true</jvmArg>
+                <jvmArg>-Djsse.enableSNIExtension=false</jvmArg>
               </jvmArgs>
             </launcher>
           </launchers>
